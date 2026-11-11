@@ -1,0 +1,379 @@
+
+/* Main Section */
+
+.cook-section {
+    width: 100%;
+    min-height: 110vh;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Header */
+
+.cook-header {
+    width: 100%;
+    height: 145px;
+
+    background-color: #fffaf4;
+
+    background-image:
+        linear-gradient(rgba(112, 67, 47, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(112, 67, 47, 0.07) 1px, transparent 1px);
+
+    background-size: 20px 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+.cook-header-container {
+    width: 78%;
+    margin: auto;
+}
+
+.cook-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #30251f;
+}
+
+/* Main Container */
+
+.cook-container {
+    width: 78%;
+    max-width: 1400px;
+    margin: 115px auto 70px;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: 100px;
+
+    align-items: start;
+}
+
+/* Left Side */
+
+.cook-left h2,
+.cook-right h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    font-weight: 400;
+    color: #111;
+    margin: 0 0 16px;
+}
+
+/* Paragraph */
+
+.cook-left p,
+.cook-right p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.9;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 26px;
+}
+
+.cook-right p a {
+    color: #70432f;
+    text-decoration: none;
+}
+
+/* Cookbook Image */
+
+.cook-book {
+    width: 100%;
+    max-width: 420px;
+    height: 340px;
+
+    position: relative;
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cook-book img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    transition: transform 0.5s ease;
+}
+
+.cook-book:hover img {
+    transform: scale(1.06);
+}
+
+/* Order Button */
+
+.cook-order-btn {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: #70432f;
+    color: white;
+
+    padding: 14px 30px;
+
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: 0.4s ease;
+}
+
+.cook-order-btn span {
+    margin-left: 12px;
+    font-size: 20px;
+}
+
+.cook-order-btn:hover {
+    background: #bd895e;
+    padding-left: 38px;
+    padding-right: 38px;
+}
+
+/* Contact Form */
+
+.cook-form {
+    width: 100%;
+    margin-top: 45px;
+}
+
+.cook-input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.cook-form input,
+.cook-form textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+
+    border-bottom: 1px solid #70432f;
+
+    background: transparent;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #333;
+
+    padding: 12px 0;
+    margin-bottom: 38px;
+
+    transition: border-color 0.3s ease;
+}
+
+.cook-form input:focus,
+.cook-form textarea:focus {
+    border-bottom: 2px solid #bd895e;
+}
+
+.cook-form input::placeholder,
+.cook-form textarea::placeholder {
+    color: #999;
+}
+
+.cook-form textarea {
+    resize: vertical;
+    min-height: 55px;
+}
+
+/* Send Button */
+
+.cook-form button {
+    width: 160px;
+    height: 48px;
+
+    border: none;
+    background: #70432f;
+    color: #fff;
+
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+}
+
+.cook-form button:hover {
+    background: #bd895e;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(112, 67, 47, 0.2);
+}
+
+/* Scroll Animation */
+
+.cook-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.cook-reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cook-left {
+    transition-delay: 0.1s;
+}
+
+.cook-right {
+    transition-delay: 0.25s;
+}
+
+/* Image Animation */
+
+.cook-book {
+    animation: bookFloat 4s ease-in-out infinite;
+}
+
+@keyframes bookFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Tablet Responsive */
+
+@media (max-width: 1000px) {
+
+    .cook-container {
+        width: 88%;
+        gap: 45px;
+        grid-template-columns: 0.8fr 1.2fr;
+        margin-top: 80px;
+    }
+
+    .cook-left h2,
+    .cook-right h2 {
+        font-size: 25px;
+    }
+
+    .cook-left p,
+    .cook-right p {
+        font-size: 12px;
+    }
+
+    .cook-book {
+        height: 280px;
+    }
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+    .cook-section {
+        min-height: 110vh;
+    }
+
+    .cook-header {
+        height: 110px;
+    }
+
+    .cook-header-container {
+        width: 88%;
+    }
+
+    .cook-header h2 {
+        font-size: 27px;
+    }
+
+    .cook-container {
+        width: 88%;
+        grid-template-columns: 1fr;
+        gap: 55px;
+        margin-top: 55px;
+    }
+
+    .cook-book {
+        max-width: 350px;
+        height: 300px;
+        margin: 20px auto;
+    }
+
+    .cook-input-row {
+        gap: 18px;
+    }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+
+    .cook-container {
+        width: 90%;
+        margin-top: 40px;
+    }
+
+    .cook-left h2,
+    .cook-right h2 {
+        font-size: 24px;
+    }
+
+    .cook-left p,
+    .cook-right p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .cook-book {
+        height: 250px;
+    }
+
+    .cook-input-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cook-form input,
+    .cook-form textarea {
+        font-size: 12px;
+    }
+
+    .cook-form button {
+        width: 140px;
+        height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cook-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .cook-book {
+        animation: none;
+    }
+
+    .cook-book img,
+    .cook-order-btn,
+    .cook-form button {
+        transition: none;
+    }
+}

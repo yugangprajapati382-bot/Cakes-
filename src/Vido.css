@@ -1,0 +1,291 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+.vido-section {
+  width: 100%;
+  height: 90vh;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  background: #171717;
+}
+
+.vido-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.vido-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1s ease;
+}
+
+.vido-section:hover .vido-image img {
+  transform: scale(1.04);
+}
+
+.vido-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.08);
+  transition: background 0.5s ease;
+}
+
+.vido-section:hover .vido-overlay {
+  background: rgba(0, 0, 0, 0.20);
+}
+
+.vido-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 112px;
+  height: 112px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #75452f;
+  color: #ffffff;
+
+  font-size: 38px;
+  padding-left: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 5;
+
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 0 rgba(117, 69, 47, 0.5);
+}
+
+.vido-play:hover {
+  background: #ffffff;
+  color: #75452f;
+  transform: translate(-50%, -50%) scale(1.13);
+  box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.vido-play {
+  animation: vidoPulse 2s infinite;
+}
+
+@keyframes vidoPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(117, 69, 47, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 18px rgba(117, 69, 47, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(117, 69, 47, 0);
+  }
+}
+.vido-floating {
+  position: absolute;
+  right: 0;
+  top: 68%;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.vido-demo {
+  width: 190px;
+  height: 72px;
+  background: #ffffff;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.vido-demo strong {
+  font-family: Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.vido-demo span {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.vido-demo:hover {
+  background: #75452f;
+  color: white;
+  transform: translateX(-12px);
+}
+
+/* BUY BUTTON */
+
+.vido-buy {
+  width: 190px;
+  height: 72px;
+  background: #f51950;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.vido-bag {
+  font-size: 24px;
+}
+
+.vido-buy:hover {
+  background: #75452f;
+  transform: translateX(-12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.vido-player {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: vidoFade 0.4s ease;
+}
+
+.vido-player-content {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.vido-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+@keyframes vidoFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .vido-section {
+    height: 75vh;
+    min-height: 450px;
+  }
+
+  .vido-floating {
+    top: auto;
+    bottom: 35px;
+  }
+
+  .vido-demo,
+  .vido-buy {
+    width: 150px;
+    height: 58px;
+  }
+
+  .vido-demo strong {
+    font-size: 25px;
+  }
+
+  .vido-demo span {
+    font-size: 11px;
+  }
+
+  .vido-buy {
+    font-size: 10px;
+  }
+
+  .vido-play {
+    width: 85px;
+    height: 85px;
+    font-size: 30px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .vido-section {
+    height: 60vh;
+    min-height: 380px;
+  }
+
+  .vido-image img {
+    object-position: center;
+  }
+
+  .vido-play {
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+  }
+
+  .vido-floating {
+    bottom: 20px;
+    gap: 10px;
+  }
+
+  .vido-demo,
+  .vido-buy {
+    width: 125px;
+    height: 48px;
+  }
+
+  .vido-demo strong {
+    font-size: 21px;
+  }
+
+  .vido-demo span {
+    font-size: 10px;
+  }
+
+  .vido-buy {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vido-play {
+    animation: none;
+  }
+
+  .vido-section * {
+    transition: none;
+  }
+}

@@ -1,0 +1,299 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+.clam-section {
+  width: 100%;
+  min-height: 200vh;
+  height: auto;
+  padding: 0 6.5% 80px;
+  background: #fff;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.clam-heading {
+  width: 100%;
+  text-align: center;
+  padding-top: 5px;
+  margin-bottom: 45px;
+}
+
+.clam-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  font-weight: 400;
+  color: #111;
+  margin: 0;
+}
+
+.clam-decoration {
+  display: block;
+  margin-top: 5px;
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  color: #a77b5b;
+}
+
+.clam-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 38px;
+  row-gap: 55px;
+}
+
+.clam-card {
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+
+.clam-image-box {
+  display: block;
+  width: 100%;
+  height: 460px;
+  position: relative;
+  overflow: hidden;
+  background: #eee9e3;
+  text-decoration: none;
+}
+
+.clam-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.clam-image-box:hover .clam-image {
+  transform: scale(1.08);
+}
+
+/* IMAGE OVERLAY */
+
+.clam-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(53, 32, 20, 0.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.clam-image-overlay span {
+  color: white;
+  border: 1px solid white;
+  padding: 14px 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.clam-image-box:hover .clam-image-overlay {
+  opacity: 1;
+}
+
+.clam-image-box:hover .clam-image-overlay span {
+  transform: translateY(0);
+}
+
+/* CONTENT */
+
+.clam-content {
+  padding-top: 25px;
+  width: 100%;
+}
+
+/* DATE */
+
+.clam-date {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #75472f;
+  margin-bottom: 10px;
+}
+
+/* TITLE */
+
+.clam-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(23px, 2.1vw, 36px);
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 0 0 18px;
+  color: #111;
+}
+
+.clam-content h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.35s ease;
+}
+
+.clam-content h3 a:hover {
+  color: #966b4d;
+}
+
+/* DESCRIPTION */
+
+.clam-content p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2;
+  color: #777;
+  margin: 0 0 18px;
+  display: block;
+  overflow: visible;
+}
+
+/* READ MORE */
+
+.clam-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #75472f;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.clam-read-more span {
+  font-size: 18px;
+}
+
+.clam-read-more:hover {
+  color: #b18a6b;
+  gap: 18px;
+}
+
+/* SCROLL ANIMATION */
+
+.clam-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+  transition-delay: var(--delay, 0ms);
+}
+
+.clam-reveal.clam-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .clam-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .clam-container {
+    gap: 35px 25px;
+  }
+
+  .clam-image-box {
+    height: 350px;
+  }
+
+  .clam-content h3 {
+    font-size: 27px;
+  }
+
+  .clam-content p {
+    font-size: 12px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .clam-section {
+    min-height: 200vh;
+    height: auto;
+    padding: 0 5% 60px;
+  }
+
+  .clam-heading {
+    padding-top: 40px;
+    margin-bottom: 35px;
+  }
+
+  .clam-heading h2 {
+    font-size: 31px;
+  }
+
+  .clam-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .clam-image-box {
+    height: 300px;
+  }
+
+  .clam-content {
+    padding-top: 18px;
+  }
+
+  .clam-content h3 {
+    font-size: 26px;
+  }
+
+  .clam-content p {
+    font-size: 12px;
+    line-height: 1.9;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 420px) {
+  .clam-heading h2 {
+    font-size: 27px;
+  }
+
+  .clam-image-box {
+    height: 240px;
+  }
+
+  .clam-content h3 {
+    font-size: 23px;
+  }
+
+  .clam-content p {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clam-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .clam-image,
+  .clam-image-overlay,
+  .clam-image-overlay span {
+    transition: none;
+  }
+}
